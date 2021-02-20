@@ -1,3 +1,0 @@
-def calc():
-	my_data = open("data.online.scores.rtf", "r")
-	print(f.read)
