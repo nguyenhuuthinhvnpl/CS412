@@ -58,6 +58,7 @@ print("D) Compute the Pearson’s correlation coefficient between midterm-normal
 "and finals-original.")
 print("=====================================================================")
 # https://www.kite.com/python/answers/how-to-normalize-an-array-in-numpy-in-python#:~:text=Use%20numpy.,()%20to%20normalize%20an%20array&text=Call%20numpy.-,linalg.,norm%20to%20normalize%20the%20array.&text=Further%20Reading%20Normalizing%20a%20dataset,to%20%5B0%2C%201%5D%20.
+print("Pearson’s correlation coefficient: ", corr_o_mid_o_fin)
 print()
 
 print()

@@ -39,8 +39,8 @@ mid_mean_rounded = numpy.around(mid_mean, decimals =3)
 
 # Part D
 # https://stackoverflow.com/questions/16330831/most-efficient-way-to-find-mode-in-numpy-array
-mid_term_mode = stats.mode(mid_term_score_arr)
-final_mode = stats.mode(final_score_arr)
+mid_term_mode = mid.mode()
+final_mode = finals.mode()
 
 # Part E
 # https://www.geeksforgeeks.org/numpy-var-in-python/
@@ -66,8 +66,8 @@ print("Final: ", finals_mean_rounded)
 print()
 print("D) Mode")
 print("========================================================")
-print("Mid-Term: ", mid_term_mode)
-print("Final: ", final_mode)
+print("Mid-Term: ", *mid_term_mode)
+print("Final: ", *final_mode)
 print()
 print("E) Variance")
 print("========================================================")
