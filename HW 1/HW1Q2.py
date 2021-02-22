@@ -11,13 +11,17 @@ mid_term_score_arr = numpy.array(mid)
 final_score_arr = numpy.array(finals)
 
 var_final = numpy.var(final_score_arr, dtype = numpy.float32)
+var_mid = numpy.var(mid_term_score_arr, dtype = numpy.float32)
+
+mid_norm = stats.zscore(mid_term_score_arr)
 final_norm = stats.zscore(final_score_arr)
+var_mid_norm = numpy.var(mid_norm, dtype = numpy.float32)
 var_final_norm = numpy.var(final_norm, dtype = numpy.float32)
 
 given_score = 90
 mid_std = numpy.std(mid_term_score_arr)
 mid_mean = numpy.mean(mid_term_score_arr)
-b_norm = given_score - mid_mean / mid_std
+b_norm = (given_score - mid_mean) / mid_std
 
 corr_o_mid_o_fin = stats.pearsonr(mid_term_score_arr, final_score_arr)
 
@@ -28,8 +32,8 @@ print()
 print("A) Compute and compare the variance of midterm-original and" 
 "midterm-normalized, i.e., the midterm scores before and after normalization.")
 print("=====================================================================")
-print("Variance Final: ", var_final)
-print("Normalized Variance: ", var_final_norm)
+print("Variance MidTerml: ", var_mid)
+print("Normalized Variance: ", var_mid_norm)
 print()
 
 print()
