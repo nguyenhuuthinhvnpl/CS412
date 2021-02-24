@@ -9,14 +9,15 @@ data_table = pandas.read_table('data.libraries.inventories.txt', names = ['libra
 cml = data_table['CML']
 cbl = data_table['CBL']
 
-
+#Part A
 q3p1 = distance.minkowski(cml, cbl, 1)
 q3p2 = distance.minkowski(cml, cbl, 2)
 q3p3 = distance.minkowski(cml, cbl, float('inf'))
 
+#Part B
 q3p4 = 1 - distance.cosine(cml, cbl)
 
-
+#Part C
 kl1 = entropy(cml, cbl, base = 4)
 kl2 = entropy(cbl, cml, base = 4)
 kl1perc = kl1 * 100

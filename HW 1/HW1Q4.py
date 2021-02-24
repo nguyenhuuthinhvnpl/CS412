@@ -3,18 +3,20 @@ from scipy import stats
 
 
 table_q4 = numpy.array([[150,40],[15,3300]])
-
+# Part A
 sum = numpy.sum(table_q4)
 beer = table_q4[0][1]
 diaper = table_q4 [1][0]
 dis = (beer + diaper)/sum;
 
+# Part B
 set1 = table_q4[0][0]
 set2 = table_q4[0][1]
 set3 = table_q4[1][0]
 jac = set1 / (set1+set2+set3)
-
+# Part C
 chi =  stats.chi2_contingency(table_q4)[0]
+# Part D
 chi_2 =  stats.chi2_contingency(table_q4)[1]
 freedom = stats.chi2_contingency(table_q4)[2]
 

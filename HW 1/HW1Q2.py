@@ -10,6 +10,7 @@ mid = data_table['Mid-Term']
 mid_term_score_arr = numpy.array(mid)
 final_score_arr = numpy.array(finals)
 
+# Part A
 var_final = numpy.var(final_score_arr, dtype = numpy.float32)
 var_mid = numpy.var(mid_term_score_arr, dtype = numpy.float32)
 
@@ -18,13 +19,16 @@ final_norm = stats.zscore(final_score_arr)
 var_mid_norm = numpy.var(mid_norm, dtype = numpy.float32)
 var_final_norm = numpy.var(final_norm, dtype = numpy.float32)
 
+# Part B
 given_score = 90
 mid_std = numpy.std(mid_term_score_arr)
 mid_mean = numpy.mean(mid_term_score_arr)
 b_norm = (given_score - mid_mean) / mid_std
 
+# Part C and D
 corr_o_mid_o_fin = stats.pearsonr(mid_term_score_arr, final_score_arr)
 
+# Part E
 stack = numpy.stack((mid_term_score_arr, final_score_arr), axis = 0)
 my_cov = numpy.cov(stack)
 
