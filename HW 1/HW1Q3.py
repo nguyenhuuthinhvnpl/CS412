@@ -5,21 +5,25 @@ from scipy.spatial import distance
 from scipy.stats import entropy
 
 # Reading Data
-data_table = pandas.read_table('data.libraries.inventories.txt', names = ['library', 'CML', 'CBL'])
-cml = data_table['CML']
-cbl = data_table['CBL']
-
+# I was changing text file before, I do not think I should do that
+data_table = "data.libraries.inventories.txt"
+parse_data = pandas.read_csv(data_table, "\t")
+cml = numpy.array(parse_data.loc[parse_data['library'] == 'CML'])[0]
+cbl = numpy.array(parse_data.loc[parse_data['library'] == 'CBL'])[0]
+#get rid of the book stuff
+cml = numpy.delete(cml, 0)
+cbl = numpy.delete(cbl, 0)
 #Part A
 q3p1 = distance.minkowski(cml, cbl, 1)
 q3p2 = distance.minkowski(cml, cbl, 2)
 q3p3 = distance.minkowski(cml, cbl, float('inf'))
 
 #Part B
-q3p4 = 1 - distance.cosine(cml, cbl)
+q3p4 = 1 - distance.cosine(list(cml), list(cbl))
 
 #Part C
-kl1 = entropy(cml, cbl, base = 4)
-kl2 = entropy(cbl, cml, base = 4)
+kl1 = entropy(list(cml), list(cbl), base = 4)
+kl2 = entropy(list(cbl), list(cml), base = 4)
 kl1perc = kl1 * 100
 kl2perc = kl2 * 100
 
