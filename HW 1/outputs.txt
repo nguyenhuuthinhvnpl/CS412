@@ -87,7 +87,10 @@ Distance:  0.015691868758915834
 
 b) Calculate the distance between the binary attributes Buy Beer and Buy Diaper
 by assuming they are symmetric binary variables.
-=========================================================================================
+================================== 
+
+
+=======================================================
 Jaccard Coefficient :  0.7317073170731707
 
 

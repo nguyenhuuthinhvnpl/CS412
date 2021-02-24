@@ -2,6 +2,7 @@ import numpy
 import pandas
 from scipy import stats
 from scipy.spatial import distance
+from scipy.stats import entropy
 
 # Reading Data
 data_table = pandas.read_table('data.libraries.inventories.txt', names = ['library', 'CML', 'CBL'])
@@ -16,9 +17,10 @@ q3p3 = distance.minkowski(cml, cbl, float('inf'))
 q3p4 = 1 - distance.cosine(cml, cbl)
 
 
-q3p5 = sum(cml[i] * numpy.log2(cml[i]/cbl[i]) for i in range(len(cml)))/100
-q3p6 = sum(cbl[i] * numpy.log2(cbl[i]/cml[i]) for i in range(len(cbl)))/100
-
+kl1 = entropy(cml, cbl, base = 4)
+kl2 = entropy(cbl, cml, base = 4)
+kl1perc = kl1 * 100
+kl2perc = kl2 * 100
 
 
 print()
@@ -41,7 +43,9 @@ print()
 print()
 print("c) Compute the Kullback-Leibler (KL) divergence between CML and CBL")
 print("=========================================================================================")
-print("KL(CML || CBL): ", q3p5)
-print("KL(CBL || CML): ", q3p6)
+print("KL(CML || CBL): ", kl1, "in '%' it will be ", round(kl1perc,4),"%")
+print("KL(CBL || CML: ", kl2, "in '%' it will be ", round(kl2perc,2),"%")
+print("SK: ", metrics.mutual_info_score(cml,cbl))
+print("SK: ", metrics.mutual_info_score(cbl,cml))
 print()
 
