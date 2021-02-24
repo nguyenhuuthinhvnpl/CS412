@@ -45,7 +45,5 @@ print("c) Compute the Kullback-Leibler (KL) divergence between CML and CBL")
 print("=========================================================================================")
 print("KL(CML || CBL): ", kl1, "in '%' it will be ", round(kl1perc,4),"%")
 print("KL(CBL || CML: ", kl2, "in '%' it will be ", round(kl2perc,2),"%")
-print("SK: ", metrics.mutual_info_score(cml,cbl))
-print("SK: ", metrics.mutual_info_score(cbl,cml))
 print()
 
