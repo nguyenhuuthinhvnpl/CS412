@@ -22,8 +22,8 @@ q3p3 = distance.minkowski(cml, cbl, float('inf'))
 q3p4 = 1 - distance.cosine(list(cml), list(cbl))
 
 #Part C
-kl1 = entropy(list(cml), list(cbl), base = 4)
-kl2 = entropy(list(cbl), list(cml), base = 4)
+kl1 = entropy(list(cml), list(cbl))
+kl2 = entropy(list(cbl), list(cml))
 kl1perc = kl1 * 100
 kl2perc = kl2 * 100
 
