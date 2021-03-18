@@ -1,4 +1,5 @@
 import numpy
+from matplotlib import pyplot as plt  
 data_1 = numpy.array([13, 15, 16, 16, 19, 20, 20, 21, 22, 22, 25, 25, 25, 25, 30, 33, 33, 35, 35, 35, 35, 36, 40, 45,
 46, 52, 70])
 data_2 = numpy.array([5, 10, 11, 13, 15, 35, 50, 55, 72, 92, 204, 215])
@@ -175,3 +176,4 @@ print("DS1 Mean OG: ", ds1_mean_og)
 print("DS2 Mean OG: ", ds2_mean_og)
 print("DS1 Mean New: ", ds1_mean_new)
 print("DS2 Mean New: ", ds2_mean_new)
+
